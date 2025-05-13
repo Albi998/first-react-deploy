@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+
+
+:root {
+    /* Palette */
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --red: #bf403a;
+    --bg-dark: #1a1a1a;
+}
+
+#body {
+    font-family: "Lexend", sans-serif !important;
+    /* font-optical-sizing: auto;
+    font-style: normal; */
+    overflow-x: hidden;
+    background-color: var(--bg);
+}
+
+a {
+    color: black !important;
+    text-decoration: none !important;
+    /* z-index: 20 !important; */
+}
+
+h1 {
+    color: var(--text) !important;
+    font-size: 2.4rem !important;
+    font-weight: 700 !important;
+    line-height: 3.5rem !important;
+    margin-top: 10rem !important;
+    text-align: end;
+    /* letter-spacing: 0.1rem; */
+    /* text-decoration: underline; */
+}
+
+#progetti {
+    background-color: var(--bg-dark);
+    padding: 0px !important;
+}
+
+p {
+    margin-bottom: 0px !important;
+    /* color: var(--text); */
+}
+
+
+
+/* HOVER BUTTON IMMAGINE ----------> */
+
+.test {
+    position: relative;
+}
+
+.titolo-img {
+    position: absolute;
+    color: var(--bg);
+    opacity: 100% !important;
+    left: 2rem;
+    z-index: 10;
+    letter-spacing: 0.2rem;
+    font-weight: 300;
+    top: 3.8rem;
+    background-color: var(--red);
+}
+
+.immagine {
+    opacity: 60%;
+    display: block;
+    transition: 500ms;
+    backface-visibility: hidden;
+}
+
+.test:hover .immagine {
+    opacity: 0.3;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+
+.test:hover .middle {
+    opacity: 1;
+}
+
+.bottone {
+    border: 1px solid var(--bg);
+    background-color: transparent;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    color: var(--bg);
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition: color 0.4s;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.bottone:hover {
+    color: var(--text);
+}
+
+.bottone:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: var(--bg);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.4s ease-out;
+}
+
+.bottone:hover:before {
+    transform: scaleX(1);
+}
+
+
+
+
+/* NAVBAR ------------------> */
+
+
+
+#logo h2 {
+    color: var(--text) !important;
+    /* border: 1px solid black; */
+    font-weight: 600;
+    text-align: end;
+    margin-top: 3rem;
+    /* margin-right: 5rem; */
+    font-size: 6rem !important;
+}
+
+#navbar {
+    padding: 0px !important;
+    position: fixed;
+    right: 5rem;
+    transform: translateY(0%);
+}
+
+#navbar ul {
+    display: flex;
+    justify-content: end;
+    /* align-items: flex-end; */
+    margin-top: 10rem;
+    top: 0;
+    padding: 0px !important;
+}
+
+#navbar li {
+    margin-left: 4rem;
+    list-style: none;
+    transition: 500ms;
+    position: relative;
+}
+
+#navbar a {
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition: color 0.2s;
+}
+
+#navbar a:hover {
+    color: var(--bg) !important;
+}
+
+#navbar a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 1.3rem;
+    /* padding: 1rem; */
+    /* padding-left: 0.5rem; */
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.4s ease-out;
+}
+
+#navbar a:hover:before {
+    transform: scaleX(1);
+}
+
+
+
+
+
+
+
+
+/* CONTACT FORM ------------> */
+
+
+#contatti {
+    margin-top: 5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    /* height: 45rem; */
+    padding-bottom: 12rem;
+}
+
+#contatti h3 {
+    font-size: 4rem;
+    color: var(--bg);
+    font-weight: 800;
+    margin-bottom: 4rem;
+}
+
+input {
+    border-radius: 0px !important;
+    width: 100%;
+    background: none;
+    outline: none;
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin-bottom: 5rem !important;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom: 1px solid white !important;
+    border-radius: none;
+    font-weight: 700;
+    font-size: 1.2rem !important;
+    color: var(--bg);
+}
+
+textarea {
+    border-radius: 0px !important;
+    width: 100%;
+    background: none;
+    outline: none;
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin-bottom: 3rem !important;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom: 1px solid white !important;
+    border-radius: none;
+    font-weight: 700;
+    font-size: 1.2rem !important;
+    resize: none !important;
+    color: var(--bg);
+    height: 8rem;
+}
+
+form button {
+    background: none;
+    border: 1px solid var(--red);
+    color: var(--red);
+    width: 50%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem !important;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition: color 0.4s;
+}
+
+form button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.5s ease-out;
+}
+
+form button:hover:before {
+    transform: scaleX(1);
+}
+
+form button:hover {
+    color: var(--bg);
+}
+
+/* input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 0 3px white;
+  transition: all 0.2s ease;
+} */
+
+input:-webkit-autofill {
+    background-color: transparent !important;
+    -webkit-box-shadow: none;
+    -webkit-text-fill-color: white;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+::selection {
+    background-color: var(--red);
+    color: white;
+}
+
+::-moz-selection {
+    background-color: var(--red);
+    color: white;
+}
+
+/* input:not(:placeholder-shown) {
+    border-color: var(--accent);
+    box-shadow: 0 0 8px var(--red);
+} */
+
+
+
+
+/* RESPONSIVE -------- */
+
+@media only screen and (max-width: 767px) {
+
+    #navbar {
+        position: static;
+        right: 5rem;
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+
+    #navbar ul {
+        display: block;
+        justify-content: start;
+        margin-top: 3rem;
+        top: 0;
+        padding: 0px !important;
+        text-align: center;
+    }
+
+    #navbar li {
+        margin-left: 0rem;
+    }
+
+    #logo h2 {
+        text-align: center;
+        font-size: 3rem !important;
+    }
+
+    h1 {
+        color: var(--text) !important;
+        font-size: 1.5rem !important;
+        /* font-weight: 700 !important;
+        line-height: 3.5rem !important; */
+        margin-top: 3rem !important;
+        text-align: center !important;
+    }
+
+    .immagine {
+        opacity: 50%;
+    }
+
+    .titolo-img {
+        font-size: 0.8rem;
+    }
+
+    .bottone {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 1.5rem;
+        padding-top: 1rem;
+    }
+
+    #contatti {
+        padding-bottom: 8rem;
+    }
+
+    #contatti h3 {
+        font-size: 2rem;
+    }
+
+    form button {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    #navbar {
+        position: fixed;
+        right: 3rem;
+    }
+
+    #navbar li {
+        margin-left: 2rem;
+    }
+
+    #logo h2 {
+        font-size: 4rem !important;
+    }
+
+    h1 {
+        font-size: 1.3rem !important;
+        margin-top: 5rem !important;
+    }
+
+    .titolo-img {
+        font-size: 0.8rem;
+    }
+
+    .bottone {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    form button {
+        width: 100%;
+    }
+
+    #contatti h3 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    #navbar {
+        position: fixed;
+        right: 4rem;
+    }
+
+    #navbar li {
+        margin-left: 3rem;
+    }
+
+    #logo h2 {
+        font-size: 6rem !important;
+    }
+
+    h1 {
+        font-size: 2rem !important;
+        margin-top: 8rem !important;
+    }
+
+    .bottone {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-bottom: 1.8rem;
+        padding-top: 1.8rem;
+    }
+
+    #contatti h3 {
+        font-size: 3rem;
+    }
+}
+

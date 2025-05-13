@@ -1,0 +1,259 @@
+:root {
+  /* Palette */
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --red: #bf403a;
+  --bg-dark: #1a1a1a;
+}
+
+.pagina-prog {
+  position: relative;
+}
+
+.back-button {
+  cursor: pointer;
+  position: fixed;
+  height: 50px;
+  width: 100px;
+  background-color: var(--bg);
+  top: 50%;
+  left: 20px;
+  border: none;
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.back-button:hover {
+  color: var(--bg);
+}
+
+.back-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.4s ease-out;
+}
+
+.back-button:hover:before {
+  transform: scaleX(1);
+}
+
+.container-prog {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Masonry Layout con column-count attivato */
+.masonry {
+  column-count: 3; /* Numero di colonne su desktop */
+  column-gap: 1rem;
+  margin: 1rem;
+}
+
+.masonry-item {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.masonry-item-wrapper {
+  display: inline-block;
+  width: 100%;
+}
+
+/* Adattamento su schermi più piccoli */
+@media (max-width: 768px) {
+  .masonry {
+    column-count: 2; /* Due colonne su schermi di medie dimensioni */
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry {
+    column-count: 1; /* Una sola colonna su schermi piccoli */
+  }
+}
+
+.titolo-progetto {
+  margin-left: 1rem;
+  margin-top: 4rem;
+  font-size: 2rem;
+  /* color: var(--bg);
+  background-color: var(--red);
+  display: inline-block; */
+}
+
+.descrizione-p {
+  margin-left: 1rem;
+  padding-bottom: 2rem;
+  margin-top: 3rem;
+  font-weight: 400;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  cursor: zoom-out;
+}
+
+.modal-img {
+  max-width: 100%;
+  max-height: 80vh; /* Così non esce dalla finestra */
+  height: auto;
+  width: auto;
+  object-fit: contain; /* Fondamentale per evitare tagli */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-prev,
+.modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-prev {
+  left: 5%;
+}
+
+.modal-next {
+  right: 5%;
+}
+
+.image-wrapper {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-block; /* importante per non espandere verticalmente */
+}
+
+.image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* fix: overlay limitato all'immagine */
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.image-wrapper:hover img {
+  filter: brightness(0.6);
+  transform: scale(1.03);
+}
+
+.image-wrapper:hover .image-overlay {
+  opacity: 1;
+}
+
+.caption {
+  margin-top: 1rem;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.load-more-button {
+  cursor: pointer;
+  position: relative;
+  margin: 4rem auto 2rem auto; /* 4rem sopra, 2rem sotto */
+  display: block;
+  height: 50px;
+  width: 140px;
+  background-color: var(--bg);
+  border: none;
+  color: var(--red);
+  border: 1px solid var(--red);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.load-more-button:hover {
+  color: var(--bg);
+}
+
+.load-more-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.4s ease-out;
+}
+
+.load-more-button:hover:before {
+  transform: scaleX(1);
+}
+

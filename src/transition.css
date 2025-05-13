@@ -1,0 +1,18 @@
+/* src/transition.css */
+.transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* o bianco, o qualsiasi altro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.logo-transition {
+  width: 120px;
+  height: auto;
+}
